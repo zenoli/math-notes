@@ -1,11 +1,36 @@
 \documentclass[12pt]{article}
+
 \usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage[framemethod=TikZ]{mdframed}
+
+
+\mdfdefinestyle{blackborder}{
+    linewidth=1.5pt,
+    roundcorner=4pt
+}
+\mdfdefinestyle{graybg}{
+    linewidth=1.5pt,
+    linecolor=lightgray,
+    roundcorner=4pt,
+    backgroundcolor=lightgray,
+}
+\mdtheorem[style=blackborder]{definition}{Definition}[section]
+\mdtheorem[style=blackborder]{theorem}{Theorem}[section]
+\mdtheorem[style=graybg]{claim}{Claim}[section]
+
+
 \title{Math Notes}
 \author{Olivier Bitter}
 \date{October 2024}
+
 \begin{document}
 
 \maketitle
 \tableofcontents
-\input{sections/section-1}
+\input{sections/relations/index.tex}
+
 \end{document}

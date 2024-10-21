@@ -1,0 +1,71 @@
+\section{Relations}
+\newcommand{\relsymbol}{\rho}
+\newcommand{\reluniverse}{U}
+\newcommand{\rel}[3][\relsymbol]{#2\mathrel{#1}#3}
+\newcommand{\nrel}[3][\cancel{\relsymbol}]{#2\mathrel{#1}#3}
+
+\begin{definition}[Notions of Symmetry]
+
+  Let $U \neq \emptyset$ and $\relsymbol \subseteq \reluniverse^2$ be a relation on $U$.
+  \begin{enumerate}
+    \item $\relsymbol \text{ is asymmetric } :\Leftrightarrow
+            \forall x, y \in \reluniverse: \rel{x}{y} \rightarrow \nrel{y}{x}$
+          \label{def:asymmetry}
+    \item $\relsymbol \text{ is antisymmetric } :\Leftrightarrow
+            \forall x, y \in \reluniverse: \rel{x}{y} \land \rel{y}{x} \rightarrow x = y$
+          \label{def:antisymmetry}
+    \item $\relsymbol \text{ is not symmetric } :\Leftrightarrow
+            \exists x, y \in \reluniverse: \rel{x}{y} \land \nrel{y}{x}$
+          \label{def:no-symmetry}
+    \item $\relsymbol \text{ is symmetric } :\Leftrightarrow
+            \forall x, y \in \reluniverse: \rel{x}{y} \rightarrow \rel{y}{x}$
+          \label{def:symmetry}
+  \end{enumerate}
+  \label{def:notions-of-symmetry}
+\end{definition}
+
+\begin{claim}
+  Let $\reluniverse \neq \emptyset$ and $\relsymbol \neq \emptyset$.
+  \[
+    \relsymbol \text{ is asymmetric } \Rightarrow \relsymbol \text{ is antisymmetric.}
+  \]
+\end{claim}
+
+\begin{proof}
+  Let $\relsymbol$ be asymmetric. Let $x, y \in \reluniverse$.
+  If $\rel{x}{y}$ then $\nrel{x}{y}$ due to asymmetry of $\relsymbol$.
+  Hence $\rel{x}{y} \land \nrel{x}{y}$ will never hold, making the implication in  \ref{def:antisymmetry} of definition \ref{def:notions-of-symmetry} vacuously true.
+
+\end{proof}
+
+\begin{claim}
+  Let $\reluniverse \neq \emptyset$ and $\relsymbol \neq \emptyset$.
+  \[
+    \relsymbol \text{ is asymmetric } \Rightarrow \relsymbol \text{ is not symmetric.}
+  \]
+\end{claim}
+
+\begin{proof}
+  Let $\relsymbol$ be asymmetric. Let $x, y \in \reluniverse$.
+  If $\rel{x}{y}$ then $\nrel{x}{y}$ due to asymmetry of $\relsymbol$.
+  Hence, there exists $x, y \in \reluniverse$ s.t. $\rel{x}{y} \land \nrel{y}{x}$.
+
+\end{proof}
+
+\begin{claim}[Symmetry of the Empty Relation]
+  Let $\reluniverse \neq \emptyset$ and $\relsymbol = \emptyset$.
+
+  \begin{enumerate}
+    \item $\relsymbol$ is asymmetric.
+    \item $\relsymbol$ antisymmetric.
+    \item $\relsymbol$ is symmetric.
+  \end{enumerate}
+\end{claim}
+
+\begin{proof}
+  As all three properties are defined as logical implications, their antedecents will never hold because:
+  \[
+    \rel{x}{y} \Leftrightarrow (x, y) \in \relsymbol = \emptyset
+  \]
+\end{proof}
+
